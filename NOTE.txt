@@ -1,0 +1,7 @@
+smart calculator
+additon
+subtraction
+multiplication
+division
+square root
+cube
