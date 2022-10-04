@@ -4,7 +4,7 @@ using namespace std;
 
 int partition(int arr[],int start,int end){
     int mid=(start+end)/2;
-    int pivot=arr[mid];
+    int pivot=arr[end];
     int i = start-1;
     for(int j=start;j<=end;j++){
         if(arr[j]<pivot){
