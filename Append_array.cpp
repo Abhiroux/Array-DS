@@ -34,19 +34,30 @@ void deletion(struct Array *arr, int index){
     arr->length--;
 }
 
+void insertAtBegining(struct  Array *arr, int value){
+    for(int i=arr->size;i>=0;i--){
+        arr->A[i]=arr->A[i-1];
+    }
+    arr->A[0]=value;
+    arr->length++;
+}
+
 
 int main(){
     Array arr={{12,13,45,21,34},30,5};
-    cout<<"Before Append\n";
-    Display(arr);
-    Append(&arr,20);
-    cout<<"\nAfter Append\n";
-    Display(arr);
-    insert(&arr,1,11);
-    cout<<"\nAfter insert\n";
-    Display(arr);
-    deletion(&arr,0); 
-    cout<<"\nAfter deletion\n";
+
+    // cout<<"Before Append\n";
+    // Display(arr);
+    // Append(&arr,20);
+    // cout<<"\nAfter Append\n";
+    // Display(arr);
+    // insert(&arr,1,11);
+    // cout<<"\nAfter insert\n";
+    // Display(arr);
+    // deletion(&arr,0); 
+    // cout<<"\nAfter deletion\n";
+    // Display(arr);
+    insertAtBegining(&arr,70);
     Display(arr);
     return 0;
 }
