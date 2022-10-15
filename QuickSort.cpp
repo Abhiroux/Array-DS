@@ -27,20 +27,41 @@ void swap(int* a,int* b){
 
 
 //pivot = start;
+// int partition(int arr[],int start,int end){
+//     int pivot=arr[start];
+//     int i=start;
+//     int j=end;
+//     while(j>=i){
+//         while(arr[i]<=pivot)i++;
+//         while(arr[j]>pivot)j--;
+//         if(i<j){
+//             swap(&arr[i],&arr[j]);
+//         }
+//     }
+//     swap(&arr[j],&arr[start]);
+//     return j;
+// }
+
 int partition(int arr[],int start,int end){
-    int pivot=arr[start];
+    int mid = (start+end)/2;
+    int pivot = arr[mid];
     int i=start;
     int j=end;
-    while(j>=i){
+    while (i<j)
+    {
         while(arr[i]<=pivot)i++;
         while(arr[j]>pivot)j--;
         if(i<j){
             swap(&arr[i],&arr[j]);
         }
+        swap(&arr[j],&arr[mid]);
+        return i;
     }
-    swap(&arr[j],&arr[start]);
-    return j;
+    
+
+
 }
+
 
 void QuickSort(int arr[],int start,int end){
     if(start<end){
